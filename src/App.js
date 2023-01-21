@@ -1,11 +1,15 @@
-import React from 'react';
+import {Characters} from "./components/Characters/Characters";
 
 const App = () => {
+
+
     return (
         <div>
-          App
-        </div>
+
+<Characters/>
+
+       </div>
     );
 };
 
-export default App;
+export  {App};
