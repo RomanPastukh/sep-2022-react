@@ -7,9 +7,9 @@ import {SingleUser} from "./components/SingleUser/SingleUser";
 const App = () => {
     return (
         <div>
-            {/*<Count/>*/}
+
             <Users/>
-            {/*<SingleUser/>*/}
+
         </div>
     );
 };
