@@ -1,17 +1,23 @@
-import React from 'react';
-import {Count} from "./components/Count/Count";
-import {Users} from "./users/Users";
-import {User} from "./user/User";
-import {SingleUser} from "./components/SingleUser/SingleUser";
+
+import React, { useEffect, useState} from "react";
 
 const App = () => {
+    const [launches, setLaunches] = useState([])
+    useEffect(() =>{
+        fetch('https://api.spacexdata.com/v3/launches/').then(resp => resp.json()).then(resp => setLaunches(resp))
+
+    },[])
     return (
-        <div>
-
-            <Users/>
-
+        <div className="App">
+            {launches.filter(item => item.launch_year !== '2020').map(item =>{
+                return (
+                    <div key={item.flight_namber}>
+                        {item.flight_number} --- {item.mission_name} --- { item.launch_year}
+                        </div>
+                )
+            })}
         </div>
     );
 };
 
-export {App};
+export  {App};
