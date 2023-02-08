@@ -1,11 +1,12 @@
-import React from 'react';
+import {Posts, Users} from "./components";
 
 const App = () => {
     return (
         <div>
-          App
+          <Users/>
+            <Posts/>
         </div>
     );
 };
 
-export default App;
+export  {App};
